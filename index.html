@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Splat-Sim</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet'>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    /* Flex布局使三张图片并排显示 */
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 10px auto;
+      /* 自动水平居中 */
+      max-width: 60%;
+      text-align: center;
+
+    }
+
+    .image-item {
+      width: 25%;
+      /* 每个图片占父容器的30%宽度 */
+    }
+
+    .image-item img {
+      width: 100%;
+      /* 图片宽度填满父容器 */
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      font-size: 20px;
+      /* 字体大小 */
+      font-family: 'Times New Roman', Times, serif;
+      /* 设置字体 */
+      font-weight: bold;
+      /* 设置粗体 */
+      color: #00000096;
+    }
+
+    .title-original {
+      margin: 10px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1f1f1f;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- <h1 class="title is-1 publication-title">Splat-Sim: A Closed-Loop Driving Simulator with Gaussian Splatting</h1> -->
+            <h1 class="title is-1 publication-title">
+              <span class="title-original">
+                <img src="static/images/icon.png" alt="Splat-Sim Icon"
+                  style="vertical-align: middle; margin-right: 8px; width: 95px; height: auto;">
+                <span>Splat-Sim</span></span>
+              <span>A Closed-Loop Driving Simulator with Gaussian Splatting</span>
+              </span>
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=2oeqemsAAAAJ&hl=en" target="_blank">Junhao
+                  Ge</a><sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=0S38F-EAAAAJ&hl=en" target="_blank">Zuhong
+                  Liu</a><sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=nM5_jUIAAAAJ&hl=en" target="_blank">Longteng
+                  Fan</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=2oeqemsAAAAJ&hl=zh-CN" target="_blank">Yifan
+                  Jiang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=2oeqemsAAAAJ&hl=zh-CN" target="_blank">Jiaqi
+                  Su</a><sup>1</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://yimingli-page.github.io/" target="_blank">Yiming Li</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://zhejz.github.io/" target="_blank">Zhejun Zhang</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://siheng-chen.github.io/" target="_blank">Siheng Chen</a><sup>1,4</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University</span>&ensp;
+              <span class="author-block"><sup>2</sup>New York University</span>&ensp;
+              <br>
+              <span class="author-block"><sup>3</sup>ETH Zurich</span>&ensp;
+              <span class="author-block"><sup>4</sup>Shanghai Artificial Intelligence Laboratory</span>&ensp;
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
+
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv link -->
+                <span class="link-block" style="margin-right: 50px;">
+                  <a href="https://arxiv.org/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Arxiv</span>
+                  </a>
+                </span>
+
+                <!-- Arxiv PDF link -->
+                <span class="link-block" style="margin-right: 25px;">
+                  <a href="static/pdfs/Splat_Sim_PDF.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block" style="margin-left: 25px;">
+                  <a href="https://github.com/cancaries/Splat-Sim" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="subtitle has-text-centered" style="margin-bottom: 0px;margin-top: 10px;">
+            <span style="font-size: 25px; font-family: 'Times New Roman', Times, serif;"><b>Interactive</b>,
+              <b>High-fidelity</b>, <b>Closed-loop</b> Simulation Platform with 3D Gaussian Splatting</span>
+
+          </h2>
+          <h2 class="subtitle has-text-centered" style="margin-bottom: 5px;margin-top: 0px;">
+            <hr style="margin: 10px 0; border: 1px solid #5e5e5e8a;">
+            <span style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Splat-Sim simulates traffic
+              flow with HD map, and then reconstruct the scenario with pre-trained foreground gaussian models and
+              background models.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="video-container" style="margin-bottom: 20px;">
+        <div class="columns is-centered">
+          <video autoplay muted loop width="65%">
+            <source src="static/videos/teaser_video_white_1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- <div class="title-original" style="margin-bottom: 20px;">
+        <h2 class="title is-3">Source</h2>
+    </div> -->
+      <div class="image-container" style="display: flex; justify-content: space-between; gap: 20px;">
+        <div class="image-item" style="text-align: center;">
+          <img src="static/images/map.png" alt="pic1" style="height: 200px; width: auto; object-fit: contain;">
+          <div class="image-caption" style="margin-top: 10px;">Map</div>
+        </div>
+        <div class="image-item" style="text-align: center;">
+          <img src="static/images/fgd.png" alt="pic2" style="height: 200px; width: auto; object-fit: contain;">
+          <div class="image-caption" style="margin-top: 10px;">Foreground Model</div>
+        </div>
+        <div class="image-item" style="text-align: center;">
+          <img src="static/images/bkgd.png" alt="pic3" style="height: 200px; width: auto; object-fit: contain;">
+          <div class="image-caption" style="margin-top: 10px; ">Background Model</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>
+                <span style="font-size: 20px; line-height: 1.4; font-family: google sans">
+                  We introduce Splat-Sim, a simulation framework with Gaussian Splatting
+                  for testing autonomous driving (AD) systems, tailored for
+                  sensor-realistic closed-loop evaluation in scenarios
+                  involving dynamic agent interactions. Splat-Sim generates
+                  agent vehicles that interact with ego vehicle in configurable
+                  scenarios. We reconstruct scene backgrounds, integrating agent
+                  vehicles from a pre-trained 3D Gaussian Splatting (3DGS)
+                  vehicle library. Our framework renders images from the perspective
+                  of ego vehicle, dynamically adjusting the agent vehicles to
+                  produce novel viewpoint images in real time. In our experiments,
+                  we generate additional data via our platform to train end-to-end models (E2E models),
+                  validating the quality of the synthetic data and the effectiveness of our
+                  closed-loop simulation. Our findings indicate that open-loop
+                  evaluations of E2E models do not fully reflect performance
+                  limitations and reveal the need for improved generalization
+                  across real-world datasets. Our platform demonstrates the potential
+                  to fuse and extend real-world datasets, offering a robust simulator for AD model development and
+                  testing.
+                </span>
+              </b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- Image carousel -->
+  <section class="section" id="Architecture">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title" style="padding-bottom: 0rem;">Splat-Sim Framework</h2>
+          <div class="hero-body">
+            <div style="text-align: center;">
+              <img src="static/images/framework.png" alt="Pipeline Image" width="85%" class="fullscreenImage"
+                style="cursor: pointer;padding-top: 0rem;">
+            </div>
+            <h2 class="subtitle has-text-justified" style="padding-top: 1rem;">
+              Splat-Sim consists of three components. <b>Scene Controller</b> is
+              initialized with a world configuration and an HD map, responsible for generating and managing
+              interactive traffic flow, including both ego and agent vehicles. Based on this traffic flow data,
+              <b>Scene Renderer</b> renders new images according to a camera configuration, which is then used as sensor
+              input by Driving Planner. Finally, <b>Driving Planner</b> makes updated trajectory plans for <b>Scene
+                Controller</b>.
+              <p></p>
+              <b>Scene Controller.</b> Scene Controller utilizes HD maps derived from real-world datasets. By building
+              detailed topological
+              representations, it supports precise vehicle
+              navigation and localization. Scene Controller generates global trajectories, manages agent vehicle
+              behaviors, and uses a physics constraint handler for
+              realistic vehicle interactions, ensuring smooth and consistent motion.
+              <p></p>
+              <b>Scene Renderer.</b> Scene Renderer leverages 3D Gaussian Splatting to
+              render high-fidelity driving images. It integrating background models and foreground models seamlessly
+              within a unified coordinate system, ensuring
+              spatial-temporal consistency in rendering and producing images that reflect realistic driving scenes.
+              <p></p>
+              <b>Driving Planner.</b> Splat-Sim supports both expert planners and end-to-end (E2E) models for driving
+              behavior. The expert planner uses map-based navigation to generate vehicle trajectories. E2E model takes
+              images and ego status as inputs
+              and then update ego trajectory. In different scenarios, Driving Planner can be switched to adapt to
+              different
+              requirements.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!-- Image carousel -->
+  <section class="section hero is-small is-light">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title">Reconstruction Library</h2>
+          <div class="hero-body">
+            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;">
+              <!-- Before simulation, we pre-build a <b>3D Gaussian model library</b> for <b>dynamic foreground objects</b> and
+              <b>static backgrounds</b>, which serves as the source for rendering scenes and dynamic objects within them.
+              Using <a href="https://www.blender.org/" style="color: rgb(32, 100, 210);">Blender</a> and <a href="https://github.com/maximeraafat/BlenderNeRF" style="color: rgb(32, 100, 210);">BlenderNeRF</a>, we capture digital assets and record camera positions, initializing the
+              foreground model with mesh data containing RGB and positional information. For the Background Gaussian
+              models, we remove dynamic objects from the scene, obtaining backgrounds
+              entirely composed of static objects. -->
+              Before simulation, we pre-build a 3D Gaussian model library for dynamic foreground objects and
+              static backgrounds, which serves as the source for rendering scenes and dynamic objects within them.
+              Using <a href="https://www.blender.org/" style="color: rgb(32, 100, 210);">Blender</a> and <a
+                href="https://github.com/maximeraafat/BlenderNeRF" style="color: rgb(32, 100, 210);">BlenderNeRF</a>, we
+              capture digital assets and record camera positions, initializing the
+              foreground model with mesh data containing RGB and positional information. For the Background Gaussian
+              models, we remove dynamic objects from the scene, obtaining backgrounds
+              entirely composed of static objects.
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="video-container">
+      <video autoplay muted loop>
+        <source src="static/videos/AUDI.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Performance of UniAD in a closed-loop simulation with DriveArena.
+      </h2>
+    </div> -->
+      <div class="video-container" style="display: flex; justify-content: space-between;padding-top: 0rem;">
+        <!-- 第一个视频 -->
+        <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+            <source src="static/videos/AUDI.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- 第二个视频 -->
+        <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+            <source src="static/videos/BENZG.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- 第三个视频 -->
+        <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+            <source src="static/videos/BWM.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        Foreground Gaussian Model Data Generated with Blender and BlenderNeRF
+      </h2>
+      <div class="video-container" style="display: flex; justify-content: space-between; gap: 10px;padding-top: 10px;">
+        <!-- 第一个视频 -->
+        <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+            <source src="static/videos/250_new.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- 第二个视频 -->
+        <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+            <source src="static/videos/276_new.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- 第三个视频 -->
+        <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+            <source src="static/videos/386_new.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered" style="padding-top: 20px;">
+        Images Rendered with Pre-trained Background Gaussian Models
+      </h2>
+    </div>
+  </section>
+
+  <section class="section hero is-small">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title">Open-loop Benchmark</h2>
+          <div class="hero-body">
+            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;">
+              In open-loop mode, an expert planner generates control signals for the ego and agent vehicles based on
+              predefined trajectories. Scene Controller sets up the scenario, and Scene Renderer creates images
+              from updated vehicle positions. Following data is generated with Waymo Open Dataset and FPS is set to 2Hz.
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+        <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+          <source src="static/videos/019_320.mp4" type="video/mp4">
+          <!-- <span class="video-caption">segment-10275144660749673822_5755_561_5775_561_with_camera_labels, 2Hz</span> -->
+        </video>
+      </div>
+      <!-- 第二个视频 -->
+      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+        <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+          <source src="static/videos/155_320.mp4" type="video/mp4">
+          <!-- <span class="video-caption">segment-13390791323468600062_6718_570_6738_570_with_camera_labels, 2Hz</span> -->
+        </video>
+      </div>
+      <!-- 第三个视频 -->
+      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+        <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+          <source src="static/videos/276_320.mp4" type="video/mp4">
+          <!-- <span class="video-caption">segment-segment-15943938987133888575_2767_300_2787_300_with_camera_labels, 2Hz</span> -->
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-small is-light">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title">Closed-loop Simulation</h2>
+          <div class="hero-body">
+            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;">
+              In closed-loop mode, e2e driving model interacts with the environment and adjusts the ego vehicle's
+              trajectory in real-time. Key metrics like Route Completion (RC), Vehicle Collision Rate (VCR), and Layout
+              Collision Rate (LCR) are used to evaluate the model's performance, focusing on adaptability and robustness
+              in dynamic scenarios.
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+        <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+          <source src="static/videos/closed_0.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+        <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+          <source src="static/videos/closed_1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+        <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+          <source src="static/videos/closed_2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+        <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
+          <source src="static/videos/closed_3.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Youtube video -->
+  <!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+  <!-- End youtube video -->
+
+
+  <!-- Video carousel -->
+  <!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+  <!-- End video carousel -->
+
+
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+  <!--End paper poster -->
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <!-- Ending -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
