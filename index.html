@@ -100,11 +100,11 @@
               </span>
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=nM5_jUIAAAAJ&hl=en" target="_blank">Longteng
-                  Fan</a><sup>1</sup>,
+                  Fan</a><sup>1*</sup>,
               </span>
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=2oeqemsAAAAJ&hl=zh-CN" target="_blank">Yifan
-                  Jiang</a><sup>1</sup>,
+                  Jiang</a><sup>1*</sup>,
               </span>
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=2oeqemsAAAAJ&hl=zh-CN" target="_blank">Jiaqi
@@ -194,33 +194,31 @@
       <div class="video-container" style="margin-bottom: 20px;">
         <div class="columns is-centered">
           <video autoplay muted loop width="65%">
-            <source src="static/videos/teaser_video_white_1.mp4" type="video/mp4">
+            <source src="static/videos/teaser_video.mp4" type="video/mp4">
           </video>
         </div>
       </div>
 
-      <!-- <div class="title-original" style="margin-bottom: 20px;">
-        <h2 class="title is-3">Source</h2>
-    </div> -->
+
       <div class="image-container" style="display: flex; justify-content: space-between; gap: 20px;">
-        <div class="image-item" style="text-align: center;">
+        <div class="image-item" style="text-align: center;font-family: google sans">
           <img src="static/images/map.png" alt="pic1" style="height: 200px; width: auto; object-fit: contain;">
           <div class="image-caption" style="margin-top: 10px;">Map</div>
         </div>
         <div class="image-item" style="text-align: center;">
           <img src="static/images/fgd.png" alt="pic2" style="height: 200px; width: auto; object-fit: contain;">
-          <div class="image-caption" style="margin-top: 10px;">Foreground Model</div>
+          <div class="image-caption" style="margin-top: 10px;font-family: google sans">Foreground Model</div>
         </div>
         <div class="image-item" style="text-align: center;">
           <img src="static/images/bkgd.png" alt="pic3" style="height: 200px; width: auto; object-fit: contain;">
-          <div class="image-caption" style="margin-top: 10px; ">Background Model</div>
+          <div class="image-caption" style="margin-top: 10px; font-family: google sans">Background Model</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Paper abstract -->
+
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -256,10 +254,7 @@
       </div>
     </div>
   </section>
-  <!-- End paper abstract -->
 
-
-  <!-- Image carousel -->
   <section class="section" id="Architecture">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -270,7 +265,7 @@
               <img src="static/images/framework.png" alt="Pipeline Image" width="85%" class="fullscreenImage"
                 style="cursor: pointer;padding-top: 0rem;">
             </div>
-            <h2 class="subtitle has-text-justified" style="padding-top: 1rem;">
+            <h2 class="subtitle has-text-justified" style="padding-top: 1rem;font-family: google sans">
               Splat-Sim consists of three components. <b>Scene Controller</b> is
               initialized with a world configuration and an HD map, responsible for generating and managing
               interactive traffic flow, including both ego and agent vehicles. Based on this traffic flow data,
@@ -302,22 +297,14 @@
       </div>
     </div>
   </section>
-  <!-- End image carousel -->
 
-  <!-- Image carousel -->
   <section class="section hero is-small is-light">
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title">Reconstruction Library</h2>
           <div class="hero-body">
-            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;">
-              <!-- Before simulation, we pre-build a <b>3D Gaussian model library</b> for <b>dynamic foreground objects</b> and
-              <b>static backgrounds</b>, which serves as the source for rendering scenes and dynamic objects within them.
-              Using <a href="https://www.blender.org/" style="color: rgb(32, 100, 210);">Blender</a> and <a href="https://github.com/maximeraafat/BlenderNeRF" style="color: rgb(32, 100, 210);">BlenderNeRF</a>, we capture digital assets and record camera positions, initializing the
-              foreground model with mesh data containing RGB and positional information. For the Background Gaussian
-              models, we remove dynamic objects from the scene, obtaining backgrounds
-              entirely composed of static objects. -->
+            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;font-family: google sans">
               Before simulation, we pre-build a 3D Gaussian model library for dynamic foreground objects and
               static backgrounds, which serves as the source for rendering scenes and dynamic objects within them.
               Using <a href="https://www.blender.org/" style="color: rgb(32, 100, 210);">Blender</a> and <a
@@ -330,30 +317,21 @@
           </div>
         </div>
       </div>
-      <!-- <div class="video-container">
-      <video autoplay muted loop>
-        <source src="static/videos/AUDI.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Performance of UniAD in a closed-loop simulation with DriveArena.
-      </h2>
-    </div> -->
+
       <div class="video-container" style="display: flex; justify-content: space-between;padding-top: 0rem;">
-        <!-- 第一个视频 -->
+
         <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
           <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
             <source src="static/videos/AUDI.mp4" type="video/mp4">
           </video>
         </div>
 
-        <!-- 第二个视频 -->
         <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
           <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
             <source src="static/videos/BENZG.mp4" type="video/mp4">
           </video>
         </div>
 
-        <!-- 第三个视频 -->
         <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
           <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
             <source src="static/videos/BWM.mp4" type="video/mp4">
@@ -361,32 +339,28 @@
         </div>
       </div>
       <h2 class="subtitle has-text-centered">
-        Foreground Gaussian Model Data Generated with Blender and BlenderNeRF
+        <b>Foreground Gaussian Model Data Generated with Blender and BlenderNeRF</b>
       </h2>
       <div class="video-container" style="display: flex; justify-content: space-between; gap: 10px;padding-top: 10px;">
-        <!-- 第一个视频 -->
         <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
           <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-            <source src="static/videos/250_new.mp4" type="video/mp4">
+            <source src="static/videos/250_bkgd.mp4" type="video/mp4">
           </video>
         </div>
 
-        <!-- 第二个视频 -->
         <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
           <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-            <source src="static/videos/276_new.mp4" type="video/mp4">
+            <source src="static/videos/276_bkgd.mp4" type="video/mp4">
           </video>
         </div>
-
-        <!-- 第三个视频 -->
         <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
           <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-            <source src="static/videos/386_new.mp4" type="video/mp4">
+            <source src="static/videos/386_bkgd.mp4" type="video/mp4">
           </video>
         </div>
       </div>
       <h2 class="subtitle has-text-centered" style="padding-top: 20px;">
-        Images Rendered with Pre-trained Background Gaussian Models
+        <b>Images Rendered with Pre-trained Background Gaussian Models</b>
       </h2>
     </div>
   </section>
@@ -397,7 +371,7 @@
         <div class="column is-four-fifths">
           <h2 class="title">Open-loop Benchmark</h2>
           <div class="hero-body">
-            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;">
+            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;font-family: google sans">
               In open-loop mode, an expert planner generates control signals for the ego and agent vehicles based on
               predefined trajectories. Scene Controller sets up the scenario, and Scene Renderer creates images
               from updated vehicle positions. Following data is generated with Waymo Open Dataset and FPS is set to 2Hz.
@@ -405,25 +379,27 @@
           </div>
         </div>
       </div>
-      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+      <div class="video-container">
         <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-          <source src="static/videos/019_320.mp4" type="video/mp4">
-          <!-- <span class="video-caption">segment-10275144660749673822_5755_561_5775_561_with_camera_labels, 2Hz</span> -->
+          <source src="static/videos/019_openloop.mp4" type="video/mp4">
         </video>
+        <span class="video-caption">Scene: 019,   Agent Num: 20,   2Hz</span>
+      <br>
       </div>
-      <!-- 第二个视频 -->
-      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+      <div class="video-container">
         <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-          <source src="static/videos/155_320.mp4" type="video/mp4">
+          <source src="static/videos/155_openloop.mp4" type="video/mp4">
           <!-- <span class="video-caption">segment-13390791323468600062_6718_570_6738_570_with_camera_labels, 2Hz</span> -->
         </video>
+        <span class="video-caption">Scene: 155,   Agent Num: 20,   2Hz</span>
       </div>
-      <!-- 第三个视频 -->
-      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+      <br>
+      <div class="video-container">
         <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-          <source src="static/videos/276_320.mp4" type="video/mp4">
-          <!-- <span class="video-caption">segment-segment-15943938987133888575_2767_300_2787_300_with_camera_labels, 2Hz</span> -->
+          <source src="static/videos/276_openloop.mp4" type="video/mp4">
+          
         </video>
+        <span class="video-caption">Scene: 276,   Agent Num: 20,   2Hz</span>
       </div>
     </div>
   </section>
@@ -434,8 +410,8 @@
         <div class="column is-four-fifths">
           <h2 class="title">Closed-loop Simulation</h2>
           <div class="hero-body">
-            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;">
-              In closed-loop mode, e2e driving model interacts with the environment and adjusts the ego vehicle's
+            <h2 class="subtitle has-text-justified" style="padding-top: 0rem;font-family: google sans">
+              In closed-loop mode, E2E driving models interacts with the environment and adjusts the ego vehicle's
               trajectory in real-time. Key metrics like Route Completion (RC), Vehicle Collision Rate (VCR), and Layout
               Collision Rate (LCR) are used to evaluate the model's performance, focusing on adaptability and robustness
               in dynamic scenarios.
@@ -443,25 +419,35 @@
           </div>
         </div>
       </div>
-      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+      <div class="video-container">
         <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-          <source src="static/videos/closed_0.mp4" type="video/mp4">
+          <source src="static/videos/019_closedloop_success.mp4" type="video/mp4">
+          
         </video>
+        <span class="video-caption">Scene: 019, Success in Static Driving Scene</span>
       </div>
-      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+      <br>
+      <div class="video-container">
         <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-          <source src="static/videos/closed_1.mp4" type="video/mp4">
+          <source src="static/videos/019_closedloop_fail.mp4" type="video/mp4">
         </video>
+        <span class="video-caption">Scene: 019, Fail Reason: Collide with Other Vehicles</span>
       </div>
-      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+      <br>
+      <div class="video-container">
         <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-          <source src="static/videos/closed_2.mp4" type="video/mp4">
+          <source src="static/videos/276_closedloopsuccess.mp4" type="video/mp4">
+          
         </video>
+        <span class="video-caption">Scene: 276, Success in Static Driving Scene</span>
       </div>
-      <div class="video-item" style="text-align: center; flex: 1; overflow: hidden;">
+      <br>
+      <div class="video-container">
         <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop>
-          <source src="static/videos/closed_3.mp4" type="video/mp4">
+          <source src="static/videos/276_closedloop_fail.mp4" type="video/mp4">
+          
         </video>
+        <span class="video-caption">Scene: 276, Fail Reason: Collide with Other Vehicles</span>
       </div>
     </div>
   </section>
